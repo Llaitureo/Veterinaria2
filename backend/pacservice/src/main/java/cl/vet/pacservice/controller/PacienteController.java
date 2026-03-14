@@ -1,16 +1,21 @@
 package cl.vet.pacservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import cl.vet.pacservice.dto.ClienteDTO;
+import cl.vet.pacservice.dto.PacienteDTO;
 import cl.vet.pacservice.dto.PacienteDetalleDTO;
+import cl.vet.pacservice.model.Paciente;
 import cl.vet.pacservice.service.PacienteService;
+
 import io.swagger.v3.oas.annotations.Operation;
+
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 import io.swagger.v3.oas.annotations.media.*;
-import org.springframework.hateoas.MediaTypes;
 
 
 @RestController
@@ -33,7 +38,7 @@ public class PacienteController {
             
                         }
                     )  
-    @getMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @GetMapping
     public ResponseEntity<List<Paciente>> getAllPacientes() {
         return ResponseEntity.ok(pacienteService.getAllPacientes());
     }
@@ -59,7 +64,7 @@ public class PacienteController {
                             )
                         }
                     )
-    @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @PostMapping
     public ResponseEntity<Paciente> createPaciente(@RequestBody Paciente paciente) {
         return ResponseEntity.ok(pacienteService.createPaciente(paciente));
     }
@@ -77,9 +82,9 @@ public class PacienteController {
                         )
                     }
                 )
-    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE, value = "/{id}/detalle")
-    public ResponseEntity<PacienteDetalleDTO> getDetalleCompleto(@PathVariable Long id) {
-        return ResponseEntity.ok(pacienteService.obtenerPacienteConDueño(id));
+    @GetMapping(value = "/detalle/{id}")
+    public ResponseEntity<PacienteDetalleDTO> getDetalleCompletoID(@PathVariable Long id) {
+        return ResponseEntity.ok(pacienteService.obtenerPacienteConDuenio(id));
     }
 
 }

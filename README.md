@@ -28,8 +28,8 @@ El backend se basa en Microservicio, por lo que cada caja tiene su carpeta,
 
 - Una vez que la aplicación ya definida del servicio esté corriendo, accede a la interfaz de Swagger:
 
-👉 [http://localhost:8081/docs](http://localhost:8081/docs) - Clientes
+👉 [http://localhost:8081/doc/swagger-ui.html](http://localhost:8081/doc/swagger-ui.html) - Clientes
 
-👉 [http://localhost:8082/docs](http://localhost:8082/docs) - Pacientes
+👉 [http://localhost:8082/doc/swagger-ui.html](http://localhost:8082/doc/swagger-ui.html) - Pacientes
 
 > Me dio rabia el swagger, vale queso en la versión anterior - Llaitureo

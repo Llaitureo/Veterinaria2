@@ -1,10 +1,8 @@
 package cl.vet.pacservice.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
@@ -41,11 +39,8 @@ public class PacienteDTO {
 
     @NotNull(message = "No se aceptan nulos en esta casilla")
     @Positive(message = "La edad del paciente debe ser positiva")
-    @DecimalMin(value = "0.1")
-    @DecimalMax(value = "200.00")
-    @Digits(integer = 5, fraction = 2, message = "Maximo 3 enteros y 2 decimales")
     @Schema(description = "Edad del paciente", example = "3.0, 0.7, 12.3 y 12.0")
-    private Double edad;
+    private BigDecimal edad;
 
     @NotBlank(message = "Los antecedentes del paciente no pueden estar en blanco")
     @NotNull(message = "No se aceptan nulos en esta casilla")

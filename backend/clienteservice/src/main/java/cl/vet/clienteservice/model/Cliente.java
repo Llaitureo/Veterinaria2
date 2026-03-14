@@ -1,7 +1,5 @@
 package cl.vet.clienteservice.model;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.*;
@@ -42,6 +40,5 @@ public class Cliente {
     @Column(nullable = false, length = 15)
     @Positive(message = "El teléfono debe ser un número positivo")
     private int telefono;
-
-
+    
 }

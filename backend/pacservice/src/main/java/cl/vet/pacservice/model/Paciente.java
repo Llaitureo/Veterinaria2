@@ -4,15 +4,17 @@ import jakarta.persistence.*;
 
 import jakarta.validation.constraints.*;
 
-import lombok.Data;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-@Data
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "pacientes")
@@ -38,16 +40,13 @@ public class Paciente {
     @NotNull(message = "No se aceptan nulos en esta casilla")
     @JsonFormat(pattern = "dd-MM-yyyy")
     @PastOrPresent(message = "La fecha de nacimiento no puede ser una fecha futura")
-    @Column(name = "fecha_nacimiento", nullable = false, length = 50)
-    private String fechaNacimiento;
+    @Column(name = "fecha_nacimiento", nullable = false)
+    private LocalDate fechaNacimiento;
 
     @NotNull(message = "No se aceptan nulos en esta casilla")
     @Positive(message = "La edad del paciente debe ser positiva")
-    @DecimalMin(value = "0.1")
-    @DecimalMax(value = "200.00")
-    @Digits(integer = 5, fraction = 2, message = "Maximo 3 enteros y 2 decimales")
-    @Column(name = "edad", nullable = false, length = 50)
-    private Double edad;
+    @Column(name = "edad", nullable = false)
+    private BigDecimal edad;
 
     @NotBlank(message = "Los antecedentes del paciente no pueden estar en blanco")
     @NotNull(message = "No se aceptan nulos en esta casilla")

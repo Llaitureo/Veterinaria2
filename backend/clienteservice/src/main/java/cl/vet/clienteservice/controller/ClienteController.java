@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.hateoas.MediaTypes;
+
 
 
 @FeignClient(name = "cliente-service", url = "http://localhost:8081")
@@ -43,7 +43,7 @@ public class ClienteController {
             
             } 
         )
-    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @GetMapping
     public List<Cliente> getAllClientes() {
         return clienteRepository.findAll();
     }
@@ -70,7 +70,7 @@ public class ClienteController {
                         )
         }
     )
-    @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @PostMapping
     public Cliente createCliente(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
@@ -88,7 +88,7 @@ public class ClienteController {
                         )
         }
     )
-    @GetMapping(produces = MediaTypes.HAL_JSON_VALUE, value = "/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Cliente> getClienteById(@PathVariable Long id) {
         return clienteRepository.findById(id)
                 .map(ResponseEntity::ok)
