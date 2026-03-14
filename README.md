@@ -7,12 +7,9 @@
     - Spring Boot 4.x
     - java 21
     - Maven
+    -H2 Database
 
 # 🛠️ Descripción Backend
-
-El backend se basa en Microservicio, por lo que cada caja tiene su carpeta,
- si se cae el servicio de cliente, el servicio de paciente sigue intacto.
-- Multi-modulo
 
 - **Lista de servicios**
     - Cliente-service
@@ -24,12 +21,17 @@ El backend se basa en Microservicio, por lo que cada caja tiene su carpeta,
 - H2 elimina la fricción de configurar credenciales, puertos o servicios externos.
  Permite que se descargue el código pueda ejecutarlo de inmediato sin configuraciones previas de infraestructura.
 
+## Funcionamiento
+
+- Levanta primero el servicio "Cliente" con Spring Dashboard (preferible, no necesario) y luego el servicio "Paciente", el servicio paciente depende del puerto activo de cliente.
+
 ## 📖 Documentación de la API (Swagger)
 
-- Una vez que la aplicación ya definida del servicio esté corriendo, accede a la interfaz de Swagger:
+- Una vez que la aplicación esté totalmente levantada, accede a la interfaz de Swagger para las pruebas en postman:
 
 👉 [http://localhost:8081/doc/swagger-ui.html](http://localhost:8081/doc/swagger-ui.html) - Clientes
 
 👉 [http://localhost:8082/doc/swagger-ui.html](http://localhost:8082/doc/swagger-ui.html) - Pacientes
 
-> Me dio rabia el swagger, vale queso en la versión anterior - Llaitureo
+# Descripción Frontend
+> próximamente.
