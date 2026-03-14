@@ -9,6 +9,9 @@
     - Maven
 
 # 🛠️ Descripción Backend
+
+El backend se basa en Microservicio, por lo que cada caja tiene su carpeta,
+ si se cae el servicio de cliente, el servicio de paciente sigue intacto.
 - Multi-modulo
 
 - **Lista de servicios**
@@ -19,13 +22,14 @@
 ## 🗄️ Base de Datos - H2 Database
 
 - H2 elimina la fricción de configurar credenciales, puertos o servicios externos.
-Permite que se descargue el código pueda ejecutarlo de inmediato sin configuraciones previas de infraestructura.
+ Permite que se descargue el código pueda ejecutarlo de inmediato sin configuraciones previas de infraestructura.
 
 ## 📖 Documentación de la API (Swagger)
 
 - Una vez que la aplicación ya definida del servicio esté corriendo, accede a la interfaz de Swagger:
 
 👉 [http://localhost:8081/docs](http://localhost:8081/docs) - Clientes
+
 👉 [http://localhost:8082/docs](http://localhost:8082/docs) - Pacientes
 
 > Me dio rabia el swagger, vale queso en la versión anterior - Llaitureo
