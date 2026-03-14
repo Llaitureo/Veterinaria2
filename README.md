@@ -2,10 +2,11 @@
 > *Versión mejorada, claramente más bonita."
 
 **Especificación**
-    - ***Backend***
-        - Spring Boot 4.x
-        - java 21
-        - Maven
+
+- ***Backend***
+    - Spring Boot 4.x
+    - java 21
+    - Maven
 
 # 🛠️ Descripción Backend
 - Multi-modulo
