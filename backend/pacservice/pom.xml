@@ -11,7 +11,7 @@
 	<groupId>cl.vet</groupId>
 	<artifactId>pacservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pacienteservice</name>
+	<name>pacservice</name>
 	<description>backend para el servicio del paciente (mascota).</description>
 	<url/>
 	<licenses>

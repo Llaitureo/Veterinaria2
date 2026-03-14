@@ -11,7 +11,7 @@
 	<groupId>cl.vet</groupId>
 	<artifactId>clienteservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cliente service</name>
+	<name>clienteservice</name>
 	<description>backend para el servicio de cliente.</description>
 	<url/>
 	<licenses>
