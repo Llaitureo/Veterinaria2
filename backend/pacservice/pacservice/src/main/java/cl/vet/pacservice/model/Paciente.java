@@ -1,0 +1,57 @@
+package cl.vet.pacservice.model;
+
+import jakarta.persistence.*;
+
+import jakarta.validation.constraints.*;
+
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "pacientes")
+public class Paciente {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "El nombre es obligatorio")
+    @Column(name = "nombre", nullable = false, length = 50)
+    private String nombre;
+
+    @NotBlank(message = "La especie es obligatoria")
+    @Column(name = "especie", nullable = false, length = 50)
+    private String especie;
+
+    @NotBlank(message = "La raza es obligatoria")
+    @Column(name = "raza", nullable = false, length = 50)
+    private String raza;
+
+    @NotBlank(message = "La fecha de nacimiento es obligatoria")
+    @NotNull(message = "No se aceptan nulos en esta casilla")
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    @PastOrPresent(message = "La fecha de nacimiento no puede ser una fecha futura")
+    @Column(name = "fecha_nacimiento", nullable = false, length = 50)
+    private String fechaNacimiento;
+
+    @NotNull(message = "No se aceptan nulos en esta casilla")
+    @Positive(message = "La edad del paciente debe ser positiva")
+    @DecimalMin(value = "0.1")
+    @DecimalMax(value = "200.00")
+    @Digits(integer = 5, fraction = 2, message = "Maximo 3 enteros y 2 decimales")
+    @Column(name = "edad", nullable = false, length = 50)
+    private Double edad;
+
+    @NotBlank(message = "Los antecedentes del paciente no pueden estar en blanco")
+    @NotNull(message = "No se aceptan nulos en esta casilla")
+    @Column(name = "antecedentes", nullable = false, length = 450)
+    private String antecedentes;
+
+}
