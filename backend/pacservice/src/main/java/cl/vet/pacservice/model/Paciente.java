@@ -36,7 +36,6 @@ public class Paciente {
     @Column(name = "raza", nullable = false, length = 50)
     private String raza;
 
-    @NotBlank(message = "La fecha de nacimiento es obligatoria")
     @NotNull(message = "No se aceptan nulos en esta casilla")
     @JsonFormat(pattern = "dd-MM-yyyy")
     @PastOrPresent(message = "La fecha de nacimiento no puede ser una fecha futura")

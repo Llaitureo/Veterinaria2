@@ -50,14 +50,14 @@ public class PacienteController {
                 schema = @Schema(implementation = PacienteDTO.class),
                     examples = @ExampleObject(name = "EjemploPaciente", 
                         summary = "Ejemplo de paciente válido",
-                            value = "{\"nombre\": \"Firulais\",\"especie\": \"Perro\", \"raza\": \"Pastor Alemán\", \"fechaNacimiento\": \"01-09-2019\", \"edad\": 2, \"clienteId\": 1, \"antecedentes\": \"N/A - No posee antecedentes.\"}"
+                            value = "{\"nombre\": \"Firulais\",\"especie\": \"Perro\", \"raza\": \"Pastor Alemán\", \"fechaNacimiento\": \"01-09-2019\", \"edad\": 2.0, \"clienteId\": 1, \"antecedentes\": \"N/A - No posee antecedentes.\"}"
                                     )
                                 )
                             ),
         @ApiResponse(responseCode = "400", description = "Error de agregación, un campo no posee los requisitos minimos para la creación del usuario/cliente.",
             content = @Content(mediaType = "application/json",
                     examples = @ExampleObject(name = "EjemploPaciente", 
-                        summary = "Ejemplo de paciente válido",
+                        summary = "Ejemplo de paciente no válido",
                             value = "{\"nombre\": \"Firulais\",\"especie\": \"Perro\", \"raza\": \"Pastor Alemán\", \"fechaNacimiento\": \"01-09-2019\", \"edad\": 2, \"clienteId\": 1, \"antecedentes\": \"N/A - No posee antecedentes.\"}"
                                     )
                                 )

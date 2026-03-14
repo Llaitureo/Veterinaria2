@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import cl.vet.pacservice.dto.ClienteDTO;
 
-@FeignClient(name = "cliente-service", url = "http://localhost:8082")
+@FeignClient(name = "cliente-service", url = "http://localhost:8081")
 public interface ClienteClient {
     
     @GetMapping("/api/clientes/{id}") // La ruta exacta.
