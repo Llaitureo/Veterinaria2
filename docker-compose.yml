@@ -1,0 +1,22 @@
+services:
+  paciente-service:
+    build: ./pacservice
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./wallet:/app/wallet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@vet3database_medium?TNS_ADMIN=/app/wallet
+      - SPRING_DATASOURCE_USERNAME=vet3database_pac
+      - SPRING_DATASOURCE_PASSWORD=databaseV3_632
+
+  usuario-service:
+    build: ./clienteservice
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./wallet:/app/wallet
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@vet3database_medium?TNS_ADMIN=/app/wallet
+      - SPRING_DATASOURCE_USERNAME=vet3database_usr
+      - SPRING_DATASOURCE_PASSWORD=databaseV3_236
